@@ -6,11 +6,12 @@ console.log('difficolta:', difficulty);
 if (parseInt(difficulty)  == 2 ) {
   mode = 34;
   console.log('HardMode', mode);
-} else if ( parseInt(difficulty) == 1) {
+  } else if ( parseInt(difficulty) == 1) {
   mode = 64;
   console.log('NormalMode', mode);
-} else
+    } else{
   console.log ('EasyMode', mode);
+}
 
 // VARIABILI DI GLOBALI
 var randomPc = [];
@@ -20,8 +21,8 @@ var score = 0;
 
 ///FUNZIONE GENERAZIONE RANDOM
 function getRandomIntInclusive(min, max) {
-min = Math.ceil(min);
-max = Math.floor(max);
+  min = Math.ceil(min);
+  max = Math.floor(max);
 return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 for (var i = 1; i <= 16; i++) {
