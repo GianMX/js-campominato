@@ -1,34 +1,53 @@
-// SETTING DIFFICOLTA
-var mode = 84;
-difficulty = prompt('Scegli mode : Easy Mode = 0  Normal Mode = 1 HardMode = 2');
-console.log('difficolta:', difficulty);
-//
-if (parseInt(difficulty)  == 2 ) {
-  mode = 34;
-  console.log('HardMode', mode);
-  } else if ( parseInt(difficulty) == 1) {
-  mode = 64;
-  console.log('NormalMode', mode);
-    } else{
-  console.log ('EasyMode', mode);
-}
-
-// VARIABILI DI GLOBALI
+// VARIABILI
 var randomPc = [];
 var player;
 var boom = false;
 var score = 0;
 
-///FUNZIONE GENERAZIONE RANDOM
-function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-return Math.floor(Math.random() * (max - min + 1)) + min;
+// SETTING DIFFICOLTA
+var mode = 84;
+var difficulty = prompt('Scegli la difficoltà : Easy Mode (100) = premi 0 // Normal Mode (80) =  premi 1 // HardMode (50) = premi 2');
+console.log('difficolta:', difficulty);
+if (parseInt(difficulty)  == 2 ) {
+  mode = 34;
+  for (var i = 1; i <= 16; i++) {
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    for (var i = 1; i <= 16; i++) {
+      randomPc.push(getRandomIntInclusive(1,50));
+    }
+    console.log('La super-mente uber malefica robotica ha piazzato le bombe... muhahah ' + randomPc);
+  }
+  console.log('HardMode' + ' TryHard');
+  } else if ( parseInt(difficulty) == 1) {
+  mode = 64;
+  for (var i = 1; i <= 16; i++) {
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    for (var i = 1; i <= 16; i++) {
+      randomPc.push(getRandomIntInclusive(1,80));
+    }
+    console.log('La super-mente cattiva robotica ha piazzato le bombe... muhahah ' + randomPc);
+  }
+  console.log('NormalMode' + ' Git Gud ');
+    } else{
+      function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      for (var i = 1; i <= 16; i++) {
+        randomPc.push(getRandomIntInclusive(1,100));
+      }
+      console.log('La super-mente cattivella robotica ha piazzato le bombe... muhahah ' + randomPc);
+      console.log ('EasyMode' + ' NoooooooB ');
 }
-for (var i = 1; i <= 16; i++) {
-  randomPc.push(getRandomIntInclusive(1,100));
-}
-console.log('La super-mente robotica ha piazzato le bombe... muhahah ' + randomPc);
 
 // UTENTE INSERISCE 84 NUMERI
 var x = 0;
